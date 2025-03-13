@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFS School Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ✅ Background */
+        body {
+            background: url('school-gallery-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+
+        /* ✅ Header (Without Margin & Padding) */
+        .header {
+            background: rgba(0, 64, 128, 0.9);
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: fixed;
+            top:0;
+            left: 0;
+            height: 50px;
+            line-height: 50px;
+            padding-top:5px;
+        }
+
+        /* ✅ Gallery Container */
+        .gallery-container {
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 70px auto 70px auto; /* Space for fixed header & footer */
+        }
+
+        .gallery-container h2 {
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        /* ✅ Image Styling */
+        .gallery img {
+            width: 70%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* ✅ Text Info */
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        /* ✅ Footer (Without Margin & Padding) */
+        .footer {
+            background: rgba(0, 64, 128, 0.9);
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ✅ Header -->
+    <div class="header">
+        📸 BFS School - Gallery
+    </div>
+
+    <!-- ✅ Gallery Container -->
+    <div class="gallery-container">
+        <h2>🏫 Our Beautiful Memories</h2>
+
+        <!-- ✅ Classroom -->
+        <img src="Classroom.webp" alt="Classroom" width='300px' height="250px">
+        <div class="info">📚 <b>Classroom:</b> Our classrooms are well-equipped with modern facilities, ensuring a comfortable and engaging learning environment.</div>
+
+        <!-- ✅ Sports -->
+        <img src="Sport.webp" alt="Sports" width='300px' height="250px">
+        <div class="info">⚽ <b>Sports Ground:</b> Our school provides excellent sports facilities to encourage physical fitness and teamwork among students.</div>
+
+        <!-- ✅ Science Lab -->
+        <img src="Science.webp" alt="Science Lab" width='300px' height="250px">
+        <div class="info">🔬 <b>Science Lab:</b> The science lab is equipped with modern instruments, allowing students to conduct experiments and enhance their practical knowledge.</div>
+    </div>
+
+    <!-- ✅ Footer -->
+    <div class="footer">
+        © 2025 BFS School. All Rights Reserved.
+    </div>
+
+</body>
+</html>

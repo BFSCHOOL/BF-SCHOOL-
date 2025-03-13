@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ✅ Background Image Based on Screen Orientation */
+        body {
+            background: url('P.webp') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        @media (orientation: landscape) {
+            body {
+                background: url('l.webp') no-repeat center center fixed;
+                background-size: cover;
+            }
+        }
+
+        /* ✅ Header Styling */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 64, 128, 0.9);
+            padding: 10px 20px;
+            color: white;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .school-name {
+            font-size: 22px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* ✅ Navigation Bar Styling */
+        .nav-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            background-color: #ffcc00;
+            color: #004080;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #ff9900;
+        }
+
+        /* ✅ Responsive Menu Button */
+        .menu-btn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ✅ Sidebar Styling */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #004080;
+            padding-top: 60px;
+            transition: 0.3s;
+            z-index: 1001;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #ffcc00;
+            color: #004080;
+        }
+
+        /* ✅ Admission Button (Moved to Bottom) */
+        .admission-btn {
+            background: linear-gradient(90deg, #ffcc00, #ff9900);
+            color: white;
+            padding: 15px 30px;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.4s;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            bottom: 70px; /* Moved button lower */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+        }
+
+        .admission-btn:hover {
+            transform: translateX(-50%) scale(1.1);
+            box-shadow: 0px 8px 20px rgba(255, 165, 0, 0.6);
+        }
+
+        /* ✅ Footer Styling (Fixed at Bottom) */
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 64, 128, 0.9);
+            color: white;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;  
+            }
+
+            .menu-btn {
+                display: block; 
+            }
+
+            .sidebar {
+                display: block; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ✅ Header with Menu Button -->
+    <header class="header">
+        <div class="school-name">BRIGHT FUTURE SCHOOL</div>
+        <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="ABOUT.html">About Us</a>
+            <a href="Contact.html">Contact</a>
+            <a href="Gallery.html">Gallery</a>
+        </nav>
+    </header>
+
+    <!-- ✅ Sidebar for Mobile View -->
+    <div class="sidebar" id="sidebar">
+        <a href="index.html" onclick="closeSidebar()">Home</a>
+        <a href="ABOUT.html" onclick="closeSidebar()">About Us</a>
+        <a href="Contact.html" onclick="closeSidebar()">Contact</a>
+        <a href="Gallery.html" onclick="closeSidebar()">Gallery</a>
+    </div>
+
+    <!-- ✅ Admission Button (Moved to Bottom) -->
+    <a href="admission.html" class="admission-btn">🎓 Apply for Admission</a>
+
+    <!-- ✅ Footer (Fixed at Bottom) -->
+    <footer class="footer">
+        © 2025 BFS School. All Rights Reserved.
+    </footer>
+
+    <!-- ✅ JavaScript for Sidebar -->
+    <script>
+        function toggleSidebar() {
+            let sidebar = document.getElementById("sidebar");
+            let btn = document.querySelector(".admission-btn");
+
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+                btn.style.zIndex = "999"; // Show button when sidebar is closed
+            } else {
+                sidebar.style.left = "0px";
+                btn.style.zIndex = "998"; // Hide button under sidebar
+            }
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.left = "-250px";
+            document.querySelector(".admission-btn").style.zIndex = "999"; // Show button when sidebar is closed
+        }
+    </script>
+
+</body>
+</html>

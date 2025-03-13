@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - BFS School</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ✅ Background Image */
+        body {
+            background: url('admission-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* ✅ Fixed Header (Without Margin & Padding) */
+        .header {
+            background: rgba(0, 64, 128, 0.9);
+            width: 100%;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 50px;
+            line-height: 50px;
+            z-index: 1000;
+            padding-top: 5px
+        }
+
+        /* ✅ Admission Content */
+        .admission-container {
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 70px; /* Space for fixed header */
+            margin-bottom: 70px; /* Space for fixed footer */
+        }
+
+        .admission-container h2 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+
+        .admission-container p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        /* ✅ Admission Form */
+        .admission-form {
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .admission-form label {
+            display: block;
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        .admission-form input, 
+        .admission-form select, 
+        .admission-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* ✅ Submit Button */
+        .submit-btn {
+            background: #ffcc00;
+            color: #004080;
+            padding: 12px;
+            width: 100%;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #ff9900;
+        }
+
+        /* ✅ Fixed Footer (Without Margin & Padding) */
+        .footer {
+            background: rgba(0, 64, 128, 0.9);
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ✅ Header -->
+    <div class="header">
+        📚 BFS School - Admissions Open!
+    </div>
+
+    <!-- ✅ Admission Content -->
+    <div class="admission-container">
+        <h2>Welcome to BFS School</h2>
+        <p>We offer a world-class education system that prepares students for a bright future. Apply now to become a part of our learning community!</p>
+        
+        <h2>Fill the Admission Form</h2>
+
+        <!-- ✅ Admission Form -->
+        <form class="admission-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+            <label for="grade">CLASS Applying For:</label>
+            <select id="grade">
+                <option value="1">CLASS 1 </option>
+                <option value="2">CLASS 2 </option>
+                <option value="3">CLASS 3</option>
+                <option value="4">CLASS 4</option>
+                <option value="5">CLASS 5</option>
+                <option value="6">CLASS 6</option>
+                <option value="7">CLASS 7</option>
+                <option value="8">CLASS 8</option>
+                <option value="9">CLASS 9</option>
+                <option value="10">CLASS 10</option>
+                <option value="11">CLASS 11</option>
+                <option value="12">CLASS 12</option>
+            </select>
+
+            <label for="message">Why do you want to join BFS School?</label>
+            <textarea id="message" rows="3" placeholder="Write a short reason..."></textarea>
+
+            <button type="submit" class="submit-btn">Apply Now</button>
+        </form>
+    </div>
+
+    <!-- ✅ Fixed Footer -->
+    <div class="footer">
+        © 2025 BFS School. All Rights Reserved.
+    </div>
+
+</body>
+</html>
